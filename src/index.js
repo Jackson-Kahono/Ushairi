@@ -22,7 +22,7 @@ function fetchData() {
             .then(callBack)
             .catch(err => {
                   console.log(err);
-                  // setTimeout(fetchData,10000)
+                  setTimeout(fetchData,10000)
             });
 }
 
@@ -87,7 +87,7 @@ function displayOne(data) {
       section.innerHTML = `
       <div class="poem-title">${data.title}</div>
       <div class="poem-author">${data.poet.name}</div>
-      <div class="poem-content">${data.content.replace("\n","<br/>")}</div>
+      <div class="poem-content">${data.content}</div>
       `
       document.querySelector('.container').append(section)
 }

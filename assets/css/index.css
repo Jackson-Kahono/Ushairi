@@ -130,6 +130,8 @@
 
 .poem{
       width: 70%;
+      height: 94%;
+      overflow-y: scroll;
       padding: 5rem;
       font-size: 1.5rem;
 }
