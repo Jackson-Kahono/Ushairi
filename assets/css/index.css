@@ -40,6 +40,21 @@
       outline: none;
 }
 
+.content{
+      width: 70%;
+      padding: 2rem;
+}
+.head{
+      color:white;
+      font-size: 2rem;
+      font-family: 'Fredoka One', cursive;
+      width:fit-content;
+      background-color: #05194A;
+      padding: 0.5rem 2rem;
+      border-radius: 30px;
+
+}
+
 
 
 
