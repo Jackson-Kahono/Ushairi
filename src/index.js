@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function App() {
+      let cancel = document.querySelector('.cancel')
+      cancel.addEventListener('click', function () {
+            document.querySelector('.poem').remove()
+            document.querySelector('.content').style.display="flex"
+            cancel.style.display="none"
+      })
       fetchData();
 }
 
@@ -75,13 +81,13 @@ function addToHtml(cards,item) {
 }
 
 function displayOne(data) {
+      document.querySelector('.cancel').style.display="flex"
       let section = document.createElement('div')
       section.className = "poem"
-      section.append(cancel)
       section.innerHTML = `
       <div class="poem-title">${data.title}</div>
       <div class="poem-author">${data.poet.name}</div>
-      <div class="poem-content">${data.content}</div>
+      <div class="poem-content">${data.content.replace("\n","<br/>")}</div>
       `
       document.querySelector('.container').append(section)
 }
