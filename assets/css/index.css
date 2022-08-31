@@ -45,7 +45,6 @@
       height: 94%;
       padding: 2rem;
       overflow-y: scroll;
-      display: none;
 }
 .head{
       color:white;
@@ -129,7 +128,7 @@
       display: none;
 }
 
-#poem{
+.poem{
       width: 70%;
       padding: 5rem;
       font-size: 1.5rem;
@@ -160,6 +159,22 @@
       font-family: 'Padauk', sans-serif;
       padding: 0.5rem 2rem;
       margin-bottom: 2rem;
+}
+
+.cancel{
+      color:white;
+      font-size: 1.5rem;
+      font-family: 'Padauk', sans-serif;
+      background-color: #05194A;
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+      cursor: pointer;
+      position: relative;
+      left:80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 }
 @media (min-width: 1200px) {
   .container {

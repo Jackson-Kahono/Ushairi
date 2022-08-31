@@ -23,25 +23,6 @@ function fetchData() {
 function addToHtml(cards,item) {
       let txt = item.content
       let previewLines = txt.slice(0,297)
-      // // let toAppend = `
-      // // <div class="card">
-      // //                               <div class="card-prev">
-      // //                                     ${previewLines}
-      // //                               </div>
-      // //                               <div class="card-info">
-      // //                                     <div class="card-title">${item.title}</div>
-      // //                                     <div class="card-artist">${item.poet.name}</div>
-      // //                               </div>
-      // //                               <div class="likes">
-      // //                                     <div class="likes-count"><b>${0}</b> likes</div>
-      // //                                     <div id="like">Like</div>
-      // //                               </div>
-      // // `
-
-
-      // // card.innerHTML += toAppend
-
-      // //declare
       let card = document.createElement('div');
       let prev = document.createElement('div');
       let info = document.createElement('div');
@@ -59,7 +40,7 @@ function addToHtml(cards,item) {
 
       prev.addEventListener('click', function () {
             document.querySelector('.content').style.display="none"
-            displayOne(data)
+            displayOne(item)
       })
 
       click.addEventListener('click', function () {
@@ -82,14 +63,6 @@ function addToHtml(cards,item) {
       console.log(count)
       console.log(click)
 
-
-      // //bind attributes
-
-
-      // //bind events
-
-
-      // //append to html
       likes.append(count)
       likes.append(click)
       card.append(prev)
@@ -101,6 +74,19 @@ function addToHtml(cards,item) {
 
 }
 
+function displayOne(data) {
+      let section = document.createElement('div')
+      section.className = "poem"
+      section.innerHTML=''
+      let cancel = `<div class="cancel" onclick="alert()"><i class="fa-solid fa-xmark"></i></div>`
+      section.append(cancel)
+      section.innerHTML += `
+      <div class="poem-title">${data.title}</div>
+      <div class="poem-author">${data.poet.name}</div>
+      <div class="poem-content">${data.content}</div>
+      `
+      document.querySelector('.container').append(section)
+}
 function callBack(data) {
       let cards = document.querySelector(".cards")
       data.forEach(item => {
