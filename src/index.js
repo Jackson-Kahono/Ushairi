@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function App() {
-      let prev = document.querySelector('.card-prev');
-      console.log(prev.textContent.length)
       fetchData();
 }
 
@@ -60,8 +58,8 @@ function addToHtml(cards,item) {
 
 
       prev.addEventListener('click', function () {
-            card.className = "hidden"
-            // displayOne(data)
+            document.querySelector('.content').style.display="none"
+            displayOne(data)
       })
 
       click.addEventListener('click', function () {
