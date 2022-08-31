@@ -45,6 +45,7 @@
       height: 94%;
       padding: 2rem;
       overflow-y: scroll;
+      display: none;
 }
 .head{
       color:white;
@@ -126,6 +127,39 @@
 }
 .hidden{
       display: none;
+}
+
+#poem{
+      width: 70%;
+      padding: 5rem;
+      font-size: 1.5rem;
+}
+
+.poem-title{
+      color:white;
+      font-size: 2rem;
+      font-family: 'Fredoka One', cursive;
+      width:fit-content;
+      background-color: #05194A;
+      padding: 0.5rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 30px;
+
+}
+
+.poem-author{
+      color:#05194A;
+      font-size: 1.5rem;
+      font-family: 'Padauk', sans-serif;
+      padding: 0.5rem 2rem;
+      margin-bottom: 2rem;
+}
+
+.poem-content{
+      font-size: 1.5rem;
+      font-family: 'Padauk', sans-serif;
+      padding: 0.5rem 2rem;
+      margin-bottom: 2rem;
 }
 @media (min-width: 1200px) {
   .container {
