@@ -55,11 +55,64 @@
 
 }
 
+.cards{
+      margin-top: 3rem;
+}
+.card{
+      width:20rem;
+      height: 25rem;
+      box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+}
+.card-avatar{
+      width: 100%;
+      height: 50%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.card-info{
+      height: 20%;
+      padding: 2rem;
+      background-color: #05194A;
 
+}
 
+.card-info div:first-child{
+      color: white;
+      font-size: 1.5rem;
+      font-family: 'Fredoka One', cursive;
+      margin-bottom: 1rem;
+}
+.card-info div:nth-child(2){
+      color: white;
+      font-size: 1.5rem;
+      font-family: 'Padauk', sans-serif;
+}
+.likes{
+      color:#05194A;
+      font-family: 'Padauk', sans-serif;
+      font-size: 1.2rem;
+      height: 10%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1rem;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+}
+#like{
+      color: white;
+      background-color: #05194A;
+      text-align: center;
+      width: 40px;
+      height:fit-content;
 
-@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
   .container {
-    width: 1250px;
+    width: 1300px;
   }
 }
