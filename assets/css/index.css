@@ -70,6 +70,10 @@
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;
       margin-top: 2rem;
+      transition: all 0.5s ease;
+}
+.card:hover{
+      box-shadow: rgba(14, 30, 37, 0.12) 0px 8px 16px 20px, rgba(14, 20, 37, 0.32) 0px 4px 20px 0px;
 }
 .card-prev{
       height: 50%;
