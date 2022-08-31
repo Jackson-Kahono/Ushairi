@@ -172,7 +172,8 @@
       cursor: pointer;
       position: relative;
       left:80%;
-      display: flex;
+      top:5rem;
+      display: none;
       justify-content: center;
       align-items: center;
 }

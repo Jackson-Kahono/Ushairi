@@ -77,10 +77,8 @@ function addToHtml(cards,item) {
 function displayOne(data) {
       let section = document.createElement('div')
       section.className = "poem"
-      section.innerHTML=''
-      let cancel = `<div class="cancel" onclick="alert()"><i class="fa-solid fa-xmark"></i></div>`
       section.append(cancel)
-      section.innerHTML += `
+      section.innerHTML = `
       <div class="poem-title">${data.title}</div>
       <div class="poem-author">${data.poet.name}</div>
       <div class="poem-content">${data.content}</div>
