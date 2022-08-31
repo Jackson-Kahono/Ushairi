@@ -8,8 +8,8 @@ function App() {
       let cancel = document.querySelector('.cancel')
       cancel.addEventListener('click', function () {
             document.querySelector('.poem').remove()
-            document.querySelector('.content').style.display="flex"
-            cancel.style.display="none"
+            document.querySelector('.content').style.display = "flex"
+            cancel.style.display = "none"
       })
       fetchData();
 }
@@ -18,17 +18,20 @@ function App() {
 function fetchData() {
 
       fetch('https://www.poemist.com/api/v1/randompoems')
-            .then(resp => resp.json())
+            .then(resp => {
+                  // console.log(resp)
+                  return resp.json()
+            })
             .then(callBack)
             .catch(err => {
                   console.log(err);
-                  setTimeout(fetchData,10000)
+                  setTimeout(fetchData, 10000)
             });
 }
 
-function addToHtml(cards,item) {
+function addToHtml(cards, item) {
       let txt = item.content
-      let previewLines = txt.slice(0,297)
+      let previewLines = txt.slice(0, 297)
       let card = document.createElement('div');
       let prev = document.createElement('div');
       let info = document.createElement('div');
@@ -45,7 +48,7 @@ function addToHtml(cards,item) {
 
 
       prev.addEventListener('click', function () {
-            document.querySelector('.content').style.display="none"
+            document.querySelector('.content').style.display = "none"
             displayOne(item)
       })
 
@@ -81,7 +84,7 @@ function addToHtml(cards,item) {
 }
 
 function displayOne(data) {
-      document.querySelector('.cancel').style.display="flex"
+      document.querySelector('.cancel').style.display = "flex"
       let section = document.createElement('div')
       section.className = "poem"
       section.innerHTML = `
@@ -92,9 +95,10 @@ function displayOne(data) {
       document.querySelector('.container').append(section)
 }
 function callBack(data) {
+      setTimeout(fetchData, 15000)
       let cards = document.querySelector(".cards")
       data.forEach(item => {
             console.log(item)
-            addToHtml(cards,item)
+            addToHtml(cards, item)
       })
 }
