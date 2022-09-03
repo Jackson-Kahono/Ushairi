@@ -12,12 +12,16 @@ function App() {
             cancel.style.display = "none"
       })
       fetchData();
+      document.querySelector('.likednav').addEventListener('click', function () {
+            document.querySelector('.card').style.display = "none"
+            document.querySelector('.likedd').style.display = "block"
+      })
 }
 
 
 function fetchData() {
 
-      fetch('https://www.poemist.com/api/v1/randompoems')
+      fetch('https://www.poemist.com/api/v1/randompoems?size=100')
             .then(resp => {
                   // console.log(resp)
                   return resp.json()
@@ -53,7 +57,18 @@ function addToHtml(cards, item) {
       })
 
       click.addEventListener('click', function () {
-            let noOfLikes = parseInt(count.textContent.split(' ')[0])
+            let txt = count.textContent.split(' ')
+            let noOfLikes = parseInt(txt[0])
+            if (click.textContent == "Like") {
+                  click.innerHTML = "unlike"
+                  noOfLikes += 1
+                  card.classList.add('likedd')
+
+            }else{
+                  click.textContent = "Like"
+                  noOfLikes -= 1
+                  card.classList.remove('likedd')
+            }
             count.innerHTML = `<b>${parseInt(noOfLikes) + 1}</b> likes`
       })
       //Add html
@@ -90,7 +105,7 @@ function displayOne(data) {
       section.innerHTML = `
       <div class="poem-title">${data.title}</div>
       <div class="poem-author">${data.poet.name}</div>
-      <div class="poem-content">${data.content}</div>
+      <div class="poem-content">${data.content.replaceAll('\n','<br>')}</div>
       `
       document.querySelector('.container').append(section)
 }
