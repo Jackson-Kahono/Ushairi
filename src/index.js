@@ -69,7 +69,7 @@ function addToHtml(cards, item) {
                   noOfLikes -= 1
                   card.classList.remove('likedd')
             }
-            count.innerHTML = `<b>${parseInt(noOfLikes) + 1}</b> likes`
+            count.innerHTML = `<b>${parseInt(noOfLikes)}</b> likes`
       })
       //Add html
       prev.innerHTML = previewLines
